@@ -1,15 +1,16 @@
+// #[m
 #[macro_use]
 extern crate neon;
 extern crate rayon;
 
 use std::str;
 
-use rayon::par_iter::{ParallelIterator, IntoParallelIterator};
-
-use neon::vm::{Call, JsResult, Lock};
-use neon::js::{JsInteger, JsString};
-use neon::js::binary::JsBuffer;
+use rayon::iter::{ParallelIterator, IntoParallelIterator};
 use neon::mem::Handle;
+use neon::vm::{Call, JsResult,Lock};
+use neon::js::{JsString, JsInteger, JsFunction, Object, Value};
+use neon::js::binary::JsBuffer;
+
 
 fn lines(corpus: &str) -> Vec<&str> {
     corpus.lines()
@@ -60,6 +61,7 @@ fn wc_sequential(lines: &Vec<&str>, search: &str) -> i32 {
          .fold(0, |sum, line| sum + line)
 }
 
+
 fn wc_parallel(lines: &Vec<&str>, search: &str) -> i32 {
     lines.into_par_iter()
          .map(|line| wc_line(line, search))
@@ -78,6 +80,13 @@ fn search(call: Call) -> JsResult<JsInteger> {
     Ok(JsInteger::new(scope, total))
 }
 
+fn hello(call: Call) -> JsResult<JsString> {
+    let scope = call.scope;
+    Ok(JsString::new(scope, "hello node").unwrap())
+}
+
 register_module!(m, {
-    m.export("search", search)
+    m.export("hello", hello);
+    m.export("search",search)
 });
+

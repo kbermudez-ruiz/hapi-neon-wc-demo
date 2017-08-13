@@ -1,16 +1,30 @@
-# wc-demo
+A simple word-counting demo to showcase Neon.
 
-A simple word-counting demo to showcase [Neon](https://github.com/rustbridge/neon).
+#Please Install Rust 1.18.0
+https://www.rust-lang.org/en-US/
 
 # Setup
+See the [requirements for Neon](https://github.com/rustbridge/neon#requirements)
 
-See the [requirements for Neon](https://github.com/rustbridge/neon#requirements) (TL;DR: Node, Rust, and on OS X, XCode).
+#Build and run:
 
-# Build and run
+npm run run-demo
 
-From the project root directory, run:
 
-```
-% npm install
-% node -e 'require("./")'
-```
+#Example:
+
+http://127.0.0.1:8000/js-word-count
+
+{ 
+     "word": "thee"
+}
+
+
+http://127.0.0.1:8000/neon-word-count
+
+{ 
+     "word": "thee"
+}
+
+
+

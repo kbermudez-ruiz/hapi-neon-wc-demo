@@ -1,13 +1,17 @@
 [package]
-name = "wc-demo"
-version = "0.1.2"
-authors = ["Dave Herman <dherman@mozilla.com>"]
+name = "neon-wc-demo"
+version = "0.1.0"
+authors = ["Kenneth Bermudez"]
 license = "MIT"
+build = "build.rs"
 
 [lib]
-name = "wc_demo"
+name = "neon-wc-demo"
 crate-type = ["dylib"]
 
+[build-dependencies]
+neon-build = "0.1.17"
+
 [dependencies]
-neon = "0.1"
-rayon = { git = "https://github.com/nikomatsakis/rayon" }
+neon = "0.1.17"
+rayon = "0.8.2"

@@ -1,0 +1,19 @@
+{
+    "server": {
+        "host": "127.0.0.1",
+        "port": 8000,
+        "routes": [{
+                "routeName": "ms-javascript-route",
+                "apiName": "js-word-count",
+                "version": "v1"
+            },
+            {
+                "routeName": "ms-neon-route",
+                "apiName": "neon-word-count",
+                "version": "v1"
+            }
+        ],
+        "dataFileName": "shakespeare-plays.csv",
+        "buffer": null
+    }
+}

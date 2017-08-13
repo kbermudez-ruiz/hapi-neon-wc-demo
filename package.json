@@ -1,18 +1,47 @@
 {
-  "name": "wc-demo",
+  "name": "hapi-neon-wc-demo",
   "version": "0.1.1",
-  "description": "A word count demo to showcase Neon.",
+  "description": "A word count demo to showcase Neon (Rust and Node) or Javascript performance forked from [Dave Herman <https://github.com/dherman/wc-demo>].",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dherman/wc-demo"
+    "url": "https://github.com/kbermudez-ruiz/hapi-neon-wc-demo.git"
   },
-  "author": "Dave Herman <dherman@mozilla.com>",
+  "author": "Kenneth Bermudez",
   "license": "MIT",
-  "dependencies": {
-    "neon-cli": "^0.1.6"
-  },
   "scripts": {
-    "install": "neon build"
+    "tsc-demo": "tsc",
+    "tsc-watch": "tsc -w",
+    "build-demo": "neon build & gulp build",
+    "type-setup": "typings install",
+    "start-demo": "node build/src/index.js",
+    "setup-demo": "npm install & npm run type-setup",
+    "run-demo": "npm run build-demo & npm run start-demo",
+    "watch": "nodemon --watch build/src build/src/index.js"
+  },
+    "dependencies": {
+    "hapi": "^16.1.1",
+    "joi": "^10.4.1",
+    "linqts": "^1.8.2",
+    "nconf": "^0.8.4",
+    "neon-cli": "^0.1.18",
+    "typings": "^2.1.1",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/hapi": "^16.1.6",
+    "@types/nconf": "0.0.34",
+    "@types/node": "^8.0.7",
+    "gulp": "^3.9.1",
+    "tslint-config-airbnb": "^5.2.1",
+    "gulp-env": "^0.4.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-tslint": "^8.0.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "tslint": "^5.1.0",
+    "typescript": "^2.4"
   }
 }
