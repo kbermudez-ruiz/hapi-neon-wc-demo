@@ -19,12 +19,15 @@ http://127.0.0.1:8000/js-word-count
      "word": "thee"
 }
 
+![](images/wc-js.png)
 
 http://127.0.0.1:8000/neon-word-count
 
 { 
      "word": "thee"
 }
+
+![](images/wc-neon.png)
 
 
 
